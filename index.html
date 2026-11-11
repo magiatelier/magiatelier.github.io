@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>magiatelier! — identité visuelle et graphisme</title>
+<meta name="description" content="magiatelier! est un studio de design : identité visuelle et graphisme pour les petites structures qui veulent une image juste.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- NOTE : les textes affichés viennent de js/textes.js. Ceux de ce fichier ne servent que de secours. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="folder" viewBox="0 0 64 54"><path d="M4 8a4 4 0 0 1 4-4h14l6 7h28a4 4 0 0 1 4 4v31a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z" fill="currentColor" stroke="var(--fg)" stroke-width="2.5" stroke-linejoin="round"/></symbol></svg>
+
+<header class="menubar">
+  <span class="logo">magiatelier!</span>
+  <div class="ctl">
+    <button type="button" id="lang" lang="en" aria-label="Switch to English">EN</button>
+    <span class="clock" id="clock" aria-hidden="true"></span>
+  </div>
+</header>
+
+<main class="desktop">
+  <div class="icons">
+    <button class="icon" data-open="w-p1" style="color:#3F4720"><svg aria-hidden="true"><use href="#folder"/></svg><span data-i18n="p1">Projet 1</span></button>
+    <button class="icon" data-open="w-p2" style="color:#4A3526"><svg aria-hidden="true"><use href="#folder"/></svg><span data-i18n="p2">Projet 2</span></button>
+    <button class="icon" data-open="w-p3" style="color:#B79F7B"><svg aria-hidden="true"><use href="#folder"/></svg><span data-i18n="p3">Projet 3</span></button>
+    <button class="icon" data-open="w-p4" style="color:#6B6B2F"><svg aria-hidden="true"><use href="#folder"/></svg><span data-i18n="p4">Projet 4</span></button>
+    <button class="icon" data-open="w-svc" style="color:#B79F7B"><svg aria-hidden="true"><use href="#folder"/></svg><span data-i18n="nav2">Services</span></button>
+    <button class="icon" data-open="w-about" style="color:#6B6B2F"><svg aria-hidden="true"><use href="#folder"/></svg><span data-i18n="ab_h">À propos</span></button>
+    <button class="icon" data-open="w-contact" style="color:#8A6A4A"><svg aria-hidden="true"><use href="#folder"/></svg><span data-i18n="nav3">Contact</span></button>
+  </div>
+  <h1 class="mark">magiatelier<span>!</span></h1>
+</main>
+
+<!-- ===== PROJETS : pour mettre une vraie image, remplace la ligne <div class="shot" ...> par
+     <img class="shot" src="img/projet1.webp" alt="Description de l'image"> ===== -->
+<section class="win proj" id="w-p1" role="dialog" aria-labelledby="t-p1" tabindex="-1" hidden>
+  <div class="tb"><h2 id="t-p1" data-i18n="p1">Projet 1</h2><button class="x" type="button" data-i18n-aria="close" aria-label="Fermer">✕</button></div>
+  <div class="body"><div class="shot" style="background:#3F4720"></div><h3 data-i18n="k1">Identité visuelle</h3><p data-i18n="p1d">Décris ici le projet : le besoin du client, ta démarche, le résultat.</p></div>
+</section>
+<section class="win proj" id="w-p2" role="dialog" aria-labelledby="t-p2" tabindex="-1" hidden>
+  <div class="tb"><h2 id="t-p2" data-i18n="p2">Projet 2</h2><button class="x" type="button" data-i18n-aria="close" aria-label="Fermer">✕</button></div>
+  <div class="body"><div class="shot" style="background:#4A3526"></div><h3 data-i18n="k2">Affiche</h3><p data-i18n="p2d">Décris ici le projet : le besoin du client, ta démarche, le résultat.</p></div>
+</section>
+<section class="win proj" id="w-p3" role="dialog" aria-labelledby="t-p3" tabindex="-1" hidden>
+  <div class="tb"><h2 id="t-p3" data-i18n="p3">Projet 3</h2><button class="x" type="button" data-i18n-aria="close" aria-label="Fermer">✕</button></div>
+  <div class="body"><div class="shot" style="background:#B79F7B"></div><h3 data-i18n="k3">Packaging</h3><p data-i18n="p3d">Décris ici le projet : le besoin du client, ta démarche, le résultat.</p></div>
+</section>
+<section class="win proj" id="w-p4" role="dialog" aria-labelledby="t-p4" tabindex="-1" hidden>
+  <div class="tb"><h2 id="t-p4" data-i18n="p4">Projet 4</h2><button class="x" type="button" data-i18n-aria="close" aria-label="Fermer">✕</button></div>
+  <div class="body"><div class="shot" style="background:#6B6B2F"></div><h3 data-i18n="k4">Supports de communication</h3><p data-i18n="p4d">Décris ici le projet : le besoin du client, ta démarche, le résultat.</p></div>
+</section>
+
+<section class="win" id="w-svc" role="dialog" aria-labelledby="t-svc" tabindex="-1" hidden>
+  <div class="tb"><h2 id="t-svc" data-i18n="nav2">Services</h2><button class="x" type="button" data-i18n-aria="close" aria-label="Fermer">✕</button></div>
+  <div class="body">
+    <h3 data-i18n="s1h">Identité visuelle</h3>
+    <p data-i18n="s1p">Logo, palette, typographie et règles d’usage : un ensemble cohérent, simple à utiliser au quotidien.</p>
+    <ul><li data-i18n="s1a">Logo</li><li data-i18n="s1b">Charte graphique</li><li data-i18n="s1c">Papeterie</li></ul>
+    <h3 data-i18n="s2h">Graphisme</h3>
+    <p data-i18n="s2p">Affiches, flyers, présentations, réseaux sociaux, brochures : tout ce qui doit être clair et bien dessiné.</p>
+    <ul style="margin-bottom:0"><li data-i18n="s2a">Print</li><li data-i18n="s2b">Digital</li><li data-i18n="s2c">Illustration</li></ul>
+  </div>
+</section>
+
+<section class="win" id="w-about" role="dialog" aria-labelledby="t-about" tabindex="-1" hidden>
+  <div class="tb"><h2 id="t-about" data-i18n="ab_h">À propos</h2><button class="x" type="button" data-i18n-aria="close" aria-label="Fermer">✕</button></div>
+  <div class="body">
+    <p data-i18n="ab1">magiatelier! est le studio de Maxime. J’aime les formes simples, les couleurs de la terre et les images qui prennent le temps de dire quelque chose.</p>
+    <p data-i18n="ab2">Chaque projet commence par une conversation : ce que vous faites, à qui vous vous adressez, ce que vous voulez qu’on retienne.</p>
+  </div>
+</section>
+
+<section class="win" id="w-contact" role="dialog" aria-labelledby="t-contact" tabindex="-1" hidden>
+  <div class="tb"><h2 id="t-contact" data-i18n="nav3">Contact</h2><button class="x" type="button" data-i18n-aria="close" aria-label="Fermer">✕</button></div>
+  <div class="body">
+    <h3 data-i18n="ct_h">Un projet en tête ?</h3>
+    <p data-i18n="ct_p">Écrivez-moi en quelques lignes, je vous réponds rapidement.</p>
+    <!-- À REMPLACER par ta vraie adresse mail (2 endroits : le lien et le texte) -->
+    <a class="mail" href="mailto:test@test.mail">test@test.mail</a>
+  </div>
+</section>
+
+<script src="js/textes.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* ==========================================================
+   FONTS : les fichiers sont dans le dossier fonts/
+   Avara : dépose ton fichier ici sous le nom Avara-Black.woff2
+   (sans ce fichier, le logo s'affiche en Young Serif)
+   ========================================================== */
+@font-face{font-family:"Avara";src:url("../fonts/Avara-Black.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Young Serif";src:url("../fonts/YoungSerif-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Figtree";src:url("../fonts/Figtree-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Figtree";src:url("../fonts/Figtree-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Figtree";src:url("../fonts/Figtree-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+
+/* ==========================================================
+   RÉGLAGES : c'est ici que tu changes couleurs, polices, tailles
+   ========================================================== */
+:root{
+  /* Couleurs */
+  --sand:#E9DFCB;      /* fond du bureau */
+  --paper:#F8F2E5;     /* fond des fenêtres */
+  --bark:#4A3526;      /* brun : texte et barre du haut */
+  --olive:#6B6B2F;     /* olive : accent */
+  --moss:#3F4720;      /* vert profond : barres de titre des fenêtres */
+  --clay:#B79F7B;      /* sable foncé */
+
+  /* Polices */
+  --logo:"Avara","Young Serif",Georgia,serif;
+  --display:"Young Serif",Georgia,serif;
+  --body:"Figtree",system-ui,-apple-system,sans-serif;
+
+  /* Tailles */
+  --bar:4rem;                        /* hauteur de la barre du haut */
+  --logo-size:1.5rem;                  /* logo dans la barre du haut */
+  --mark-size:clamp(2rem,9vw,6.5rem); /* gros logo en bas à droite */
+}
+/* ========================= FIN DES RÉGLAGES ========================= */
+
+:root{--bg:var(--sand);--fg:var(--bark);--accent:var(--olive);--win:var(--paper);--top:calc(var(--bar) + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--fg);font:400 1rem/1.6 var(--body);overflow:hidden;-webkit-font-smoothing:antialiased}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+button{font:inherit;color:inherit;cursor:pointer}
+
+/* Barre du haut */
+.menubar{position:fixed;inset:0 0 auto 0;z-index:1000;height:var(--top);padding:env(safe-area-inset-top,0px) 1.5rem 0;display:flex;align-items:center;justify-content:space-between;background:var(--fg);color:var(--bg)}
+.menubar .logo{font-family:var(--logo);font-size:var(--logo-size);line-height:1}
+.menubar .ctl{display:flex;align-items:center;gap:.75rem}
+.menubar .ctl button{padding:.4rem .9rem;border:1.5px solid var(--bg);border-radius:999px;background:none;font-size:.9rem;font-weight:500;color:var(--bg)}
+.menubar .ctl button:hover{background:var(--bg);color:var(--fg)}
+.clock{font-size:.95rem;font-variant-numeric:tabular-nums}
+
+/* Bureau et dossiers */
+.desktop{position:fixed;inset:var(--top) 0 0 0;padding:1.5rem}
+.icons{display:grid;grid-template-rows:repeat(4,auto);grid-auto-flow:column;gap:1rem;width:13.5rem}
+.icon{display:flex;flex-direction:column;align-items:center;gap:.35rem;padding:.4rem;border:0;background:none;border-radius:.5rem;text-align:center;font-weight:500;font-size:.95rem}
+.icon svg{width:4rem;height:3.4rem}
+.icon:hover{background:color-mix(in srgb,var(--fg) 12%,transparent)}
+.mark{position:absolute;right:1.5rem;bottom:1rem;margin:0;font-family:var(--logo);font-weight:400;font-size:var(--mark-size);line-height:1;letter-spacing:-.04em;color:var(--accent);pointer-events:none;user-select:none}
+.mark span{color:var(--fg);margin-left:.05em}
+
+/* Fenêtres */
+.win{position:fixed;display:flex;flex-direction:column;width:min(30rem,calc(100vw - 2rem));max-height:calc(100vh - var(--top) - 2rem);background:var(--win);border:2px solid var(--fg);box-shadow:6px 6px 0 var(--fg);border-radius:.4rem;overflow:hidden}
+.win[hidden]{display:none}
+.win.proj{width:min(26rem,calc(100vw - 2rem))}
+.tb{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.4rem .5rem .4rem 1rem;background:var(--moss);color:#F3ECDD;cursor:grab;touch-action:none;user-select:none}
+.tb:active{cursor:grabbing}
+.tb h2{margin:0;font:400 1.05rem/1.2 var(--display)}
+.x{width:1.9rem;height:1.9rem;border:1.5px solid #F3ECDD;border-radius:50%;background:none;color:#F3ECDD;line-height:1;font-size:1rem}
+.x:hover{background:#F3ECDD;color:var(--moss)}
+.body{padding:1.25rem;overflow:auto}
+.body p{margin:0 0 1rem;max-width:34rem}
+.body p:last-child{margin-bottom:0}
+.body h3{margin:0 0 .3rem;font:400 1.3rem/1.2 var(--display)}
+.body ul{margin:.6rem 0 1.5rem;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.5rem}
+.body li{padding:.2rem .75rem;border:1.5px solid var(--accent);border-radius:999px;font-size:.9rem}
+.shot{display:block;width:100%;aspect-ratio:4/3;margin-bottom:1rem;border-radius:.2rem;object-fit:cover}
+.mail{font:400 1.35rem/1.3 var(--display);color:var(--fg);text-underline-offset:.25em}
+
+/* Mobile */
+@media (max-width:700px){
+  body{overflow:auto}
+  .desktop{padding:1rem}
+  .icons{grid-template-columns:repeat(2,1fr);grid-template-rows:none;grid-auto-flow:row;width:auto;gap:.75rem}
+  .mark{position:static;display:block;margin-top:2rem;text-align:left}
+  .win,.win.proj{inset:var(--top) 0 0 0!important;width:auto;max-height:none;border-radius:0;border-width:0;box-shadow:none}
+  .clock{display:none}
+  :root{--bar:3.75rem;--logo-size:1.4rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
